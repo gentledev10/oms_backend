@@ -1,9 +1,9 @@
 db.createUser(
   {
-    user: "orderUser",
-    pwd: "orderPwd",
+    user: "omsUser",
+    pwd: "omsPwd",
     roles: [
-       { role: "readWrite", db: "order" }
+       { role: "readWrite", db: "oms" }
     ]
   }
 )
