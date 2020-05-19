@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/order")
 public class OrderController {
@@ -19,7 +21,7 @@ public class OrderController {
     private OrderRepository orderRepository;
 
     @PostMapping
-    public Mono<Order> create(@RequestBody Order order) {
+    public Mono<Order> create(@Valid @RequestBody Order order) {
         return orderRepository.save(order);
     }
 
