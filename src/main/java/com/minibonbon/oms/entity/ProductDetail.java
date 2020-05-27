@@ -4,14 +4,16 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Data
-@Document(collection = "products")
-public class Product {
+public class ProductDetail {
 
-    @Id
-    private String category;
+    @NotBlank
+    private String detail;
 
-    private List<ProductDetail> productDetails;
+    @NotNull
+    private Integer count;
 }
